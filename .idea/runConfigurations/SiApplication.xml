@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="SiApplication" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="project.si.si.SiApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

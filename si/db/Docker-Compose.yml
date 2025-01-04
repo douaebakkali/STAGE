@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  oracle-db:
+    image: gvenzl/oracle-xe:latest
+    container_name: oracle-db
+    environment:
+      ORACLE_PASSWORD: password
+      ORACLE_DATABASE: si
+    ports:
+      - "1521:1521"
+      - "5500:5500"
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    environment:
+      ADMINER_DEFAULT_SERVER: oracle-db
+    ports:
+      - "8085:8080"
+    depends_on:
+      - oracle-db
+    restart: always
+
+volumes:
+  oracle-data:
+    driver: local
